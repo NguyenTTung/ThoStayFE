@@ -1,0 +1,67 @@
+.btn-color {
+     background-color: #2b7378 !important;
+}
+
+.btn-color:hover,
+.btn-color:active,
+.btn-color:focus {
+     background-color: #28777ce8 !important;
+}
+
+.heightinput-60 {
+     height: 60px;
+}
+
+.color-sdt {
+     color: #0B1A46;
+     font-weight: 500;
+}
+
+.color-pla::placeholder,
+.color-xam,
+.boder-color {
+     color: #7B85A2;
+     opacity: 1;
+     /* Đảm bảo màu sắc hiển thị rõ ràng */
+}
+
+.dangky-color {
+     color: #138086;
+     opacity: 1;
+     text-decoration: none;
+}
+
+.h2-QMK {
+     font-size: 48px;
+     font-weight: 600;
+}
+
+.input-xacminh{
+     height: 71px !important;
+     width: 71px !important;
+     font-size: 30px !important;
+     font-weight: 400 !important;
+}
+
+.time-text {
+     color: #FF6584;
+}
+
+.icon-password {
+     position: absolute;
+     padding-right: 1%;
+}
+
+.formverifyfw {
+     min-height: 100%;
+}
+
+@media (max-width: 991px) {
+     .image-verify {
+          padding-top: 2rem;
+     }
+}
+
+.h-forgotpw {
+     min-height: 100vh;
+}

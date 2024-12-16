@@ -1,0 +1,294 @@
+.span-trong-room-motel {
+  color: #00b074;
+  background-color: #1edb9c46;
+}
+.span-sudung-room-motel {
+  color: #f79336;
+  background-color: #ffdc9f46;
+}
+.span-baotri-room-motel {
+  color: #535353;
+  background-color: #bebebe46;
+}
+
+.detail-room-text {
+  margin-bottom: 0.5rem;
+  color: #0b1a46;
+  font-size: 1rem;
+  font-weight: 400;
+}
+@media (min-width: 992px) {
+  .w50resposi {
+    width: 50%;
+  }
+}
+
+.room-type-owner {
+  --bs-btn-box-shadow: 0 5px 12px #298b904d;
+  border-radius: 10px;
+  box-shadow: var(--bs-btn-box-shadow);
+  .carousel-indicators-container {
+    display: grid; /* Sử dụng grid thay vì flex */
+    grid-template-columns: repeat(2, 1fr); /* 3 ảnh mỗi hàng */
+    grid-template-rows: repeat(3, auto); /* 2 hàng */
+    gap: 10px; /* Khoảng cách giữa các ảnh */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Điều chỉnh khoảng cách */
+    width: 100%;
+    border-radius: 10px;
+    position: relative; /* Để định vị nút bấm trong container */
+
+    .indicator {
+      width: 100%;
+      aspect-ratio: 3 / 2; /* Giữ tỷ lệ ảnh */
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .btn-prev,
+    .btn-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      color: white;
+      border: none;
+      width: 40%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .btn-prev {
+      left: 0;
+    }
+
+    .btn-next {
+      right: 0;
+    }
+
+    .btn-prev:hover,
+    .btn-next:hover {
+      background: none;
+    }
+  }
+
+  .indicator:hover {
+    opacity: 1; /* Hiệu ứng khi hover */
+  }
+
+  .list-motel-body {
+    padding: 0 0 0 20px;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    .motel-item-name {
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #2e2a2a;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+      @media (max-width: 576px) {
+        h3 {
+          font-size: 15px;
+          -webkit-line-clamp: 2;
+        }
+      }
+    }
+    .motel-item-price {
+      display: flex;
+      small {
+        color: #999;
+        font-weight: 300;
+        display: flex;
+        align-items: end;
+      }
+      span {
+        font-size: 16px;
+        color: #ff5c00;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        margin: 0;
+      }
+    }
+    .motel-item-address {
+      display: flex;
+      align-items: center;
+      p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        margin: 0;
+      }
+    }
+  }
+  .list-room-motel {
+    .room-motel {
+      --bs-btn-box-shadow: 0 5px 12px #298b904d;
+      box-shadow: var(--bs-btn-box-shadow);
+      height: auto;
+      border-radius: 10px;
+      gap: 1rem;
+      width: 100%;
+      height: 110px;
+    }
+  }
+  .list-room-motel,
+  .list-img-room-motel {
+    max-height: calc(2 * 150px); /* Giới hạn chiều cao tối đa là 2 hàng */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Tùy chỉnh thanh cuộn */
+    &::-webkit-scrollbar {
+      width: 3px; /* Kích thước chiều rộng của thanh cuộn */
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #298b90; /* Màu của phần thanh cuộn */
+      border-radius: 10px; /* Bo góc thanh cuộn */
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1; /* Màu nền của khu vực thanh cuộn */
+      border-radius: 10px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .list-room-motel,
+    .list-img-room-motel {
+      max-height: none;
+      overflow-y: visible;
+    }
+  }
+  @media (min-width: 992px) and (max-width: 1399px) {
+    .list-room-motel {
+      max-height: calc(
+        2 * 250px
+      ); /* Giới hạn chiều cao tối đa là 2 hàng (tùy chỉnh 150px theo chiều cao phòng thực tế) */
+      overflow-y: auto; /* Thêm thanh cuộn dọc nếu vượt quá */
+      overflow-x: hidden; /* Ẩn thanh cuộn ngang */
+    }
+  }
+}
+
+//room info
+.room-info-body {
+  --bs-btn-box-shadow: 0 5px 12px #298b904d;
+  border-radius: 10px;
+  box-shadow: var(--bs-btn-box-shadow);
+}
+.table-room-info-history {
+  tr:last-child {
+    td:first-child {
+      border-bottom-left-radius: 1.5rem;
+    }
+
+    td:last-child {
+      border-bottom-right-radius: 1.5rem;
+    }
+  }
+}
+.bgr-detail-room-info {
+  background-color: #ffffff;
+  --bs-btn-box-shadow: 0 5px 12px #298b904d;
+  border-radius: 10px;
+  box-shadow: var(--bs-btn-box-shadow);
+  .img-info-room-detail {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .table-none-all {
+    tbody {
+      tr {
+        border: none !important;
+        td {
+          padding-bottom: 0 !important;
+        }
+      }
+    }
+  }
+  .close-user-detai-room {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    .close-btn-user {
+      color: #ff5c00;
+      border: none;
+      border-radius: 50rem;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+    }
+  }
+}
+
+.add-user-room {
+  .dropdown-list-add-user-room {
+    position: relative;
+    left: 0; /* Căn trái theo cha */
+    right: 0; /* Căn phải theo cha */
+    width: 100%; /* Đảm bảo full width */
+
+    .list-add-user-room {
+      position: fixed;
+      background-color: #fff;
+      box-shadow: var(--bs-box-shadow-sm) !important;
+      max-width: 660px;
+      width: 90%;
+      max-height: calc(3 * 60px); /* Giới hạn chiều cao cho khoảng 5 user (mỗi user ~60px) */
+      overflow-y: auto; /* Hiện thanh cuộn khi nội dung vượt quá */
+      &::-webkit-scrollbar {
+        width: 6px; /* Kích thước chiều rộng của thanh cuộn */
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #298b90; /* Màu của phần thanh cuộn */
+        border-radius: 10px; /* Bo góc thanh cuộn */
+      }
+      &::-webkit-scrollbar-track {
+        background-color: #f1f1f1; /* Màu nền của khu vực thanh cuộn */
+        border-radius: 10px;
+      }
+      .item-add-user-room {
+        padding: 8px 12px;
+        border-bottom: 1px solid #535353;
+      }
+      .btn-add-user-room{
+        background: none;
+        border: none;
+        color: #298b90;
+      }
+    }
+  }
+}
+
+.highlight-text {
+  padding: 2px;
+  border-radius: 2px;
+}

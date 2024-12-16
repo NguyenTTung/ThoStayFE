@@ -1,0 +1,19 @@
+.create-room-form{
+    .file-input {
+        height: 12vw;
+        width: 12vw;
+        &__label{
+            border: 1px dashed red;
+        }
+        &__img{
+            object-fit: cover;
+            border: 1px solid red;
+        }
+    }
+}
+.error-description{
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: var(--bs-form-invalid-color);
+}

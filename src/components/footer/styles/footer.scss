@@ -1,0 +1,95 @@
+
+.bgr-img-footer{
+
+}
+.bg-input-footer-search {
+    background-color: #f3f4f6;
+}
+// phần input col-6
+.input-bgr-footer{
+    background-color: #F5F4FF;
+    height: 70px;
+    font-family: DM Sans;
+    font-size: 16px;
+    color: rgba(19, 128, 134, 0.66);;
+}
+.input-bgr-footer::placeholder{
+    color: rgba(19, 128, 134, 0.66);
+}
+.button-bgr-footer{
+    height: 54px;
+    font-family: Poppins;
+    font-size: 18px;
+}
+
+@media (min-width: 992px){
+    .Form-footer-submit{
+        position: relative;
+    }
+    .bgr-img-footer{
+        position: relative;
+    }
+    .button-bgr-footer{
+        position: absolute;   
+        top:8px;
+        right:8px;
+    }
+}
+
+@media (max-width: 991px){
+    .button-bgr-footer{
+        margin-top: 1rem;
+    }
+}
+@media (max-width: 1199px){
+    .colum-footer-1{
+        margin-top: 1rem;
+    }
+    .margin-footer-mobie-1{
+        margin-bottom: 1.5rem;
+    }
+}
+
+//phần đầu 
+.h6-footer{
+    color: #138086;
+}
+.p-footer-form{
+    font-size: 22px;
+    color: #111111;
+    font-weight: 700;
+}
+.p-footer-tieusu{
+    color: #000000;
+    font-size: 16px;
+    font-family: Roboto Flex;
+    line-height: 22px;
+    // word-spacing: 0.1px;
+    text-align: justify;
+}
+.icon-footer-col-1{
+    width: 8vw; 
+    height: 8vw; 
+    max-width: 32px; 
+    max-height: 32px; 
+    min-width: 28px;
+    min-height: 28px;
+    background-color: #ffffff; 
+    text-align: center;   
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 50%; 
+}
+.a-footer-quick{
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+
+}
+.h3-footer-quick{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Poppins;
+    color: #000000;
+}

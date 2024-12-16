@@ -1,0 +1,179 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    // padding: 0 20px;
+
+    .formSignUp {
+        margin: auto;
+        width: 100%;
+        max-width: 500px;
+        color: #0B1A46;
+
+        .textdanger {
+            
+            color: red;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .noMargin {
+            height: 20px;
+            width: 100%;
+            margin-bottom: 0px
+        }
+
+
+        .text {
+            
+            margin: 20px;
+            color: #0B1A46;
+            font-size: 18px;
+
+            .box {
+                height: 60px;
+                border-radius: 30px;
+            }
+
+            ::placeholder {
+                padding-left: 10px;
+                color: #7B85A2;
+                font-size: 18px;
+            }
+
+            .checkbox-container {
+                display: flex; // Sử dụng flexbox để sắp xếp hàng ngang
+                align-items: center; // Canh giữa theo trục dọc
+                gap: 10px; // Khoảng cách giữa checkbox và văn bản
+                margin-top: 10px;
+
+                .checkbox {
+                    position: relative; // Đảm bảo pseudo-element hiển thị đúng vị trí
+                    color: #138086;
+                    margin: 2px;
+                    appearance: none; // Loại bỏ style mặc định của checkbox
+                    width: 18px;
+                    height: 18px;
+                    border: 1px solid #138086;
+                    border-radius: 4px;
+                    cursor: pointer;
+
+                    &:checked {
+                        background-color: #138086; // Màu khi checkbox được chọn
+                        border-color: #138086;
+                    }
+
+                    &:checked::after {
+                        content: '';
+                        position: absolute;
+                        top: 2px;
+                        left: 6px;
+                        width: 4px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 2px 2px 0;
+                        transform: rotate(45deg);
+                    }
+                }
+
+                a {
+                    color: #138086;
+                    text-decoration: none;
+                }
+            }
+
+            label {
+                text-align: center;
+                font-size: 18px;
+
+                a {
+                    color: #138086;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #04393b;
+                    }
+                }
+            }
+
+            .buttonSubmit {
+                color: white;
+                height: 60px;
+                border-radius: 30px;
+                width: 100%;
+                background-color: #138086;
+                border: none;
+
+                &:hover {
+                    background-color: #076469;
+                }
+            }
+        }
+
+        .cardTitle {
+            text-align: center;
+        }
+
+        p {
+            margin-top: 10px;
+            text-align: center;
+            color: #7B85A2;
+
+        }
+
+        // Cấu hình cho responsive
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+    }
+
+    .imageContainerBig {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .imageContainer {
+            width: 100%;
+            padding: 10px;
+
+            img {
+                width: 100%;
+                height: auto;
+
+            }
+
+            .smallImage {
+                width: 70%;
+                height: auto;
+                margin: auto;
+                display: block;
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .formSignUp {
+            max-width: 700px; // Tăng độ rộng form trên màn hình lớn
+        }
+    }
+
+    @media (max-width: 820px) {
+        flex-direction: column; // Đổi thành cột khi màn hình nhỏ
+        padding: 0 10px; // Giảm padding hai bên trên màn hình nhỏ hơn
+
+        .imageContainerBig {
+            order: -1; // Đưa hình ảnh lên trước form khi màn hình nhỏ
+        }
+
+        .formSignUp {
+            order: 1; // Form sẽ nằm dưới hình ảnh
+            width: 95%; // Độ rộng cho màn hình nhỏ
+        }
+
+        .imageContainer img {
+            width: 100%; // Hình ảnh chiếm 100% màn hình nhỏ
+        }
+    }
+}

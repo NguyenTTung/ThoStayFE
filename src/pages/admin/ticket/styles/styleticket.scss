@@ -1,0 +1,53 @@
+.ticket {
+    .block-filter {
+        &__button {
+            &--active {
+                background-color: #298B90 !important;
+                color: #fff !important;
+            }
+        }
+    }
+
+    .table-ticket {
+        tbody {
+            tr {
+                td {
+                    .text-overflow-ticket {
+                        max-width: 350px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+
+                    .text-overflow-ticket-tieude {
+                        max-width: 250px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+
+    .block-page-item{
+        &__block-page-link{
+            &--active {
+                background-color: #298B90 !important;
+                color: #fff !important;
+                cursor: auto;
+            }
+            &--disabled{
+                cursor: auto;
+                &:hover{
+                    background-color: initial !important;
+                    color: initial !important;
+                }
+                &:focus{
+                    background-color: initial !important;
+                    color: initial !important;
+                }
+            }
+        }
+    }
+}

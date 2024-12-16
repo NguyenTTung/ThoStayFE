@@ -1,0 +1,389 @@
+.Search-motel-user {
+  background-color: #f4f4f4;
+  .link-search {
+    .breadcrumbs-wrap {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      .span-link {
+        color: #298b90;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 2;
+        white-space: nowrap;
+        a {
+          color: #298b90;
+        }
+      }
+      .span-link:last-child {
+        a {
+          color: #827f7f;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .box-header-search {
+    .box-title {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.5;
+      text-transform: uppercase;
+      color: #2e2a2a;
+    }
+  }
+  .main-motel-search {
+    .list-motel-search {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+      color: #2e2a2a;
+      .count {
+        strong {
+          color: #2e2a2a;
+          font-size: 18px;
+        }
+      }
+      .arrange {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px;
+        .arrange-label {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .arrange-select {
+          select {
+            color: #827f7f;
+            font-size: 16px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+            box-shadow: none !important;
+          }
+        }
+      }
+      .btn-filter-submit {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        .btn-filter-none {
+          background: none !important;
+          border: none !important;
+          h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #298b90;
+          }
+        }
+        .offcanvas-start {
+          .offcanvas-header {
+            position: absolute;
+            right: 0;
+            .btn-close {
+            }
+          }
+          .offcanvas-body {
+          }
+        }
+      }
+      .btn-filter-submit:hover {
+        background: none !important;
+        border: none !important;
+      }
+    }
+  }
+
+  .list-motel-filter-search {
+    .item-list-motel {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      .list-motel-img {
+        a {
+          img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+        }
+      }
+      .list-motel-body {
+        padding: 0 0 0 20px;
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+        .motel-item-name {
+          h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2e2a2a;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+          }
+          @media (max-width: 576px) {
+            h3 {
+              font-size: 15px;
+              -webkit-line-clamp: 2;
+            }
+          }
+        }
+        .motel-item-price {
+          display: flex;
+          small {
+            color: #999;
+            font-weight: 300;
+            display: flex;
+            align-items: end;
+          }
+          span {
+            font-size: 16px;
+            color: #ff5c00;
+            font-weight: 600;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            margin: 0;
+          }
+        }
+        .motel-item-area {
+          display: flex;
+          small {
+            color: #999;
+            font-weight: 300;
+            display: flex;
+            align-items: end;
+          }
+          span {
+            font-size: 14px;
+            color: #2e2a2a;
+            font-weight: 600;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            margin: 0;
+          }
+        }
+        .motel-item-address {
+          display: flex;
+          align-items: center;
+          p {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .filter-motel-search {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+    //phần đi theo của filer search
+    // position: sticky;
+    // top: 100px; 
+    // max-height: calc(100vh - 40px);
+    // overflow: auto; 
+    .filter-motel-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+      h2 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #298b90;
+      }
+    }
+    .filter-motel-body {
+      margin: 10px 0;
+      border-top: 1px solid #ececec;
+      border-bottom: 1px solid #ececec;
+      .accordion {
+        --bs-accordion-border-color: none;
+        .accordion-item {
+          border: none !important;
+          background: none !important;
+          .accordion-header {
+            .accordion-button {
+              border: none !important;
+              background: none !important;
+              font-size: 16px;
+              font-weight: 500;
+            }
+          }
+          .accordion-collapse {
+            .accordion-body {
+              .radio {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                cursor: pointer;
+                padding: 0;
+                margin-bottom: 8px;
+                input {
+                  width: 100%;
+                  outline: none;
+                  border: 1px solid #cccccc;
+                  border-radius: 3px;
+                  vertical-align: baseline;
+                  background-color: transparent;
+                  box-shadow: none;
+                  padding: 5px;
+                  position: absolute;
+                }
+                input[type="radio"] {
+                  display: none;
+                }
+                input[type="radio" i] {
+                  background-color: initial;
+                  cursor: default;
+                  appearance: auto;
+                  box-sizing: border-box;
+                  margin: 3px 3px 0px 5px;
+                  padding: initial;
+                  border: initial;
+                }
+                input[type="radio"]:checked ~ span {
+                  border-color: #afd3d4;
+                  background: #298b90;
+                }
+                span {
+                  height: 26px;
+                  min-width: 26px;
+                  position: relative;
+                  border: 4px solid #f4f4f4;
+                  background: #a9aaab;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                }
+                p {
+                  margin-bottom: 0;
+                }
+              }
+              .checkbox {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                gap: 12px;
+                margin-bottom: 8px;
+                input[type="checkbox"],
+                input[type="radio"] {
+                  display: none;
+                }
+                input {
+                  width: 100%;
+                  outline: none;
+                  border: 1px solid #cccccc;
+                  border-radius: 3px;
+                  vertical-align: baseline;
+                  background-color: transparent;
+                  box-shadow: none;
+                  padding: 5px;
+                }
+                input[type="checkbox" i] {
+                  background-color: initial;
+                  cursor: default;
+                  appearance: auto;
+                  box-sizing: border-box;
+                  margin: 3px 3px 3px 4px;
+                  padding: initial;
+                  border: initial;
+                }
+                input[type="radio"][id^="area"]:checked ~ span {
+                  border-color: #afd3d4;
+                  background: #0a4281;
+                }
+
+                input[type="radio"][id^="price"]:checked ~ span {
+                  border-color: #ffd3a4;
+                  background: #ff8b20;
+                }
+                input[type="checkbox"]:checked ~ span:after {
+                  padding: 0;
+                  background-color: #298b90;
+                  content: "✔"; /* Dấu tích */
+                  color: white; /* Màu dấu tích */
+                  font-size: 14px; /* Kích thước dấu tích */
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 100%;
+                  height: 100%;
+                  text-align: center;
+                }
+                span {
+                  height: 26px;
+                  width: 26px;
+                  position: relative;
+                  border: 1px solid #ccc;
+                  border-radius: 2px;
+                  -webkit-transition: all 0.3s ease;
+                  -moz-transition: all 0.3s ease;
+                  -o-transition: all 0.3s ease;
+                  transition: all 0.3s ease;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .filter-motel-footer {
+      display: flex;
+      justify-content: space-around;
+      gap: 8px;
+      button {
+        white-space: no-wrap;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        font-weight: 600;
+        padding: 14px 20px;
+        border-radius: 4px;
+        background: #298b90;
+        color: #fff;
+        line-height: 1;
+        outline: none;
+        border: none;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .Search-motel-user {
+    background-color: #ffffff;
+  }
+}
+.form-search-motel-main{
+  position: sticky;
+}

@@ -1,0 +1,294 @@
+.header {
+  border-radius: 0 0 50px 50px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 99;
+}
+
+.color-text-header {
+  color: #0b1a46 !important;
+  font-size: 18px !important;
+}
+
+.color-btn-header {
+  background-color: #298b90;
+  white-space: nowrap;
+  border: none;
+}
+
+@media ((min-width: 992px) and (max-width:1099px)) or (min-width: 1200px) {
+  .px-3-lg {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+}
+
+.font-size-header {
+  font-size: 24px;
+}
+
+.color-btn-header:hover {
+  background-color: #1c797e;
+}
+
+@media (min-width: 1100px) and (max-width: 1399px) {
+  .col-xl-3_5 {
+    flex: 0 0 auto;
+    width: 30.66666667%;
+  }
+
+  .col-xl-1_5 {
+    flex: 0 0 auto;
+    width: 11%;
+  }
+}
+
+@media (min-width: 0px) {
+  .flex-ssm-row {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 992px) {
+  .w-ul-header {
+    display: inline-flex !important;
+  }
+
+  .border-link-header {
+    li {
+      position: relative;
+      padding: 0 1rem; // Khoảng cách giữa các li bằng độ dài chữ
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: #e2e8f0; // Gạch từ trên xuống giữa các li
+      }
+
+      &:last-child::before {
+        display: none; // Không vẽ gạch cho li cuối cùng
+      }
+    }
+  }
+
+  .cangiua {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+  }
+}
+
+.text-logo {
+  height: 100%;
+  font-size: 1.5rem;
+  font-family: Roboto Flex;
+  font-weight: 600;
+}
+
+.dropdown-custom {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu-custom {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  padding: 2px;
+  right: -6px;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+.dropdown-custom:hover .dropdown-menu-custom {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.dropdown-divider {
+  margin: 0;
+  border-top: 1px solid #ddd;
+  margin: 5px 0;
+}
+
+/* Ẩn nút tam giác của dropdown */
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* Tùy chỉnh cho icon người dùng */
+.header-avatar img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.link-dropdown-header-user:hover{
+    background-color: #298B90 !important;
+    color: #fff !important;
+}
+
+.dropdown-noti--header-user {
+  .dropdown-toggle {
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .dropdown-menu-noti-header {
+    overflow-x: hidden;
+    z-index: 1;
+    width: 500px;
+    cursor: initial;
+    position: absolute;
+    top: calc(100% + 10px) !important;
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 2px 3px 8px 0px rgba(19, 25, 28, 0.16);
+    .dropdown-header {
+      padding: 8px 12px;
+      gap: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .header-noti-title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .header-noti-tatca {
+        font-size: 18px;
+        font-weight: 600;
+        color: #298b90;
+        line-height: 1;
+        outline: none;
+      }
+    }
+    .dropdown-nav-noti {
+      display: flex;
+      padding: 0 12px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      border-bottom: 1px solid #f4f4f4;
+      .tab {
+        flex: 1;
+        .tab__radio {
+          display: none;
+        }
+        input {
+          width: 100%;
+          outline: none;
+          border: 1px solid #cccccc;
+          border-radius: 3px;
+          vertical-align: baseline;
+          background-color: transparent;
+          box-shadow: none;
+          padding: 5px;
+        }
+        .tab__label {
+          position: relative;
+          gap: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #999;
+          font-size: 13px;
+          cursor: pointer;
+          font-weight: 400;
+          padding: 8px 12px;
+          white-space: nowrap;
+        }
+        .tab__radio:checked + .tab__label {
+          color: #2e2a2a;
+        }
+        .tab__radio:checked + .tab__label::after {
+          content: "";
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          right: 0;
+          height: 3px;
+          border-radius: 2px;
+          background-color: #ff5c00;
+        }
+      }
+    }
+    .dropdown-noti-item {
+      .dropdown-noti-item-row {
+        border-radius: var(--bs-border-radius) !important;
+        box-shadow: var(--bs-box-shadow-sm) !important;
+          .dropdown-noti-item--type {
+          padding: 4px 15px;
+          color: #ffffff;
+          border-radius: 10px;
+        }
+        .dropdown-noti-item-type-1 {
+          background-color: #ff3300a2;
+        }
+        .dropdown-noti-item-type-2 {
+          background-color: #ffc400a2;
+        }
+        .dropdown-noti-item-type-3 {
+          background-color: #ff9900a2;
+        }
+        .dropdown-noti-item-type-2 {
+          background-color: #38a70ca2;
+        }
+        .dropdown-noti-item--date {
+          color: #999;
+          font-size: 13px;
+          cursor: pointer;
+          font-weight: 400;
+          white-space: nowrap;
+        }
+        .dropdown-noti-item--name {
+          color: #0f0f0f;
+          font-size: 15px;
+          cursor: pointer;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+        .dropdown-noti-item--content {
+          display: -webkit-box; /* Bật chế độ flex ẩn nội dung */
+          -webkit-line-clamp: 2; /* Giới hạn số dòng */
+          -webkit-box-orient: vertical; /* Hướng của box */
+          overflow: hidden; /* Ẩn nội dung tràn */
+          text-overflow: ellipsis; /* Thêm dấu "..." khi tràn */
+          white-space: normal; /* Bật chế độ ngắt dòng */
+          line-height: 1; /* Đặt khoảng cách giữa các dòng */
+          max-height: calc(
+            1.2em * 2
+          ); /* Giới hạn chiều cao phù hợp với 2 dòng */
+        }
+        .dropdown-noti-item--sender {
+          color: #d42222;
+          font-size: 13px;
+          cursor: pointer;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,357 @@
+
+
+.btn-create-notification {
+    background-color: #298B90;
+    color: #ffffff;
+  
+    &:hover {
+      background-color: #229096; // Màu nền đậm hơn khi hover
+      color: #ffffff;
+    }
+  }
+
+
+  //thêm thông báo
+  .modal-overlay-notifi-create {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal-content-notifi-create {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 100%;
+  }
+  .modal-overlay-notifi-create{
+    .modal-content-notifi-create{
+        .h2-modal-notifi-create{
+            width: 100%;
+            text-align: center;
+        }
+        .btn-create-notifi{
+            width: 45%;
+            --bs-btn-padding-x         : 27px;
+            --bs-btn-padding-y         : 9px;
+            --bs-btn-font-family       : ;
+            --bs-btn-font-size         : 0.9375rem;
+            --bs-btn-font-weight       : 500;
+            --bs-btn-line-height       : 1.5;
+            --bs-btn-border-width      : var(--bs-border-width);
+            --bs-btn-border-color      : transparent;
+            --bs-btn-border-radius     : 5rem;
+            --bs-btn-hover-border-color: transparent;
+            --bs-btn-box-shadow        : 0 5px 12px rgba(26, 115, 232, 0.3);
+            --bs-btn-disabled-opacity  : 0.65;
+            --bs-btn-focus-box-shadow  : 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+            display                    : inline-block;
+            padding                    : var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+            font-family                : var(--bs-btn-font-family);
+            font-size                  : var(--bs-btn-font-size);
+            font-weight                : var(--bs-btn-font-weight);
+            line-height                : var(--bs-btn-line-height);
+            text-align                 : center;
+            text-decoration            : none;
+            vertical-align             : middle;
+            user-select                : none;
+            border                     : var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+            border-radius              : var(--bs-btn-border-radius);
+            -webkit-box-shadow         : var(--bs-btn-box-shadow);
+        }
+        .btn-create-notifi-luu{
+            --bs-btn-bg : #298B90;
+            background-color           : var(--bs-btn-bg);
+            color:#ffffff;
+        }
+        .btn-create-notifi-trove{
+            color:#0B1A46;
+            --bs-btn-bg : #ffffff;
+            background-color           : var(--bs-btn-bg) !important;
+        }
+        .form-create-notifi{
+             label{
+                font-size: 20px;
+                font-weight: 500;
+                color: #0B1A46;
+            }
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #0B1A46;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50rem;
+            border: 1px solid #D9D9D9;
+            background-color: #ffffff;
+            &:hover{
+                color: #298B90;
+            }
+
+        }
+    }
+  }
+  /* Overlay cho modal sửa thông báo */
+.modal-overlay-notifi-edit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Nội dung của modal sửa thông báo */
+.modal-content-notifi-edit {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 100%;
+}
+
+/* Các phần bên trong modal sửa thông báo */
+.modal-overlay-notifi-edit {
+  .modal-content-notifi-edit {
+    .h2-modal-notifi-edit {
+      width: 100%;
+      text-align: center;
+    }
+    .btn-edit-notifi {
+      width: 45%;
+      --bs-btn-padding-x: 27px;
+      --bs-btn-padding-y: 9px;
+      --bs-btn-font-family: ;
+      --bs-btn-font-size: 0.9375rem;
+      --bs-btn-font-weight: 500;
+      --bs-btn-line-height: 1.5;
+      --bs-btn-border-width: var(--bs-border-width);
+      --bs-btn-border-color: transparent;
+      --bs-btn-border-radius: 5rem;
+      --bs-btn-hover-border-color: transparent;
+      --bs-btn-box-shadow: 0 5px 12px rgba(26, 115, 232, 0.3);
+      --bs-btn-disabled-opacity: 0.65;
+      --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+      display: inline-block;
+      padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+      font-family: var(--bs-btn-font-family);
+      font-size: var(--bs-btn-font-size);
+      font-weight: var(--bs-btn-font-weight);
+      line-height: var(--bs-btn-line-height);
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      user-select: none;
+      border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+      border-radius: var(--bs-btn-border-radius);
+      -webkit-box-shadow: var(--bs-btn-box-shadow);
+    }
+    .btn-edit-notifi-save {
+      --bs-btn-bg: #298B90;
+      background-color: var(--bs-btn-bg);
+      color: #ffffff;
+    }
+    .btn-edit-notifi-cancel {
+      color: #0B1A46;
+      --bs-btn-bg: #ffffff;
+      background-color: var(--bs-btn-bg) !important;
+    }
+    .form-edit-notifi {
+      label {
+        font-size: 20px;
+        font-weight: 500;
+        color: #0B1A46;
+      }
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #0B1A46;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50rem;
+      border: 1px solid #D9D9D9;
+      background-color: #ffffff;
+      &:hover {
+        color: #298B90;
+      }
+    }
+  }
+}
+
+
+
+/* Lớp phủ modal gửi thông báo */
+.modal-overlay-notifi-send {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Nội dung của modal gửi thông báo */
+.modal-content-notifi-send {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 100%;
+}
+
+/* Tiêu đề của modal gửi thông báo */
+.h2-modal-send {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: #0B1A46;
+}
+
+/* Các nút trong modal gửi thông báo */
+.btn-send-notifi {
+  width: 45%;
+  border-radius: 5rem;
+  padding: 10px 20px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Nút gửi thông báo */
+.btn-send-notifi-send {
+  background-color: #298B90;
+  color: #ffffff;
+}
+
+/* Nút trở về */
+.btn-send-notifi-cancel {
+  color: #0B1A46;
+  background-color: #ffffff;
+  border: 1px solid #D9D9D9;
+}
+
+/* Hiệu ứng hover cho nút */
+.btn-send-notifi:hover {
+  opacity: 0.9;
+}
+
+/* Nhóm form trong modal gửi thông báo */
+.form-send-notifi {
+  label {
+      font-size: 18px;
+      font-weight: 500;
+      color: #0B1A46;
+  }
+
+  .form-check {
+      margin-bottom: 10px;
+  }
+
+  .form-check-input {
+      margin-right: 10px;
+  }
+
+  .form-check-label {
+      font-size: 16px;
+      color: #0B1A46;
+  }
+}
+
+/* Nút đóng modal */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #0B1A46;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50rem;
+  border: 1px solid #D9D9D9;
+  background-color: #ffffff;
+}
+
+.close-btn:hover {
+  color: #298B90;
+}
+
+.noti-container{
+  .block-page-item{
+    &__block-page-link{
+        &--active {
+            background-color: #298B90 !important;
+            color: #fff !important;
+            cursor: auto;
+        }
+        &--disabled{
+            cursor: auto;
+            &:hover{
+                background-color: initial !important;
+                color: initial !important;
+            }
+            &:focus{
+                background-color: initial !important;
+                color: initial !important;
+            }
+        }
+    }
+}
+.bg-green-noti{
+  background-color: #53d3a7;
+  color: #ffffff;
+}
+.bg-blue-noti{
+  background-color: #547ce7;
+  color: #ffffff;
+}
+.bg-red-noti{
+background-color: #ffa4a4;
+color: #ffffff;
+}
+.bg-yellow-noti{
+background-color: #ebe724;
+color: #ffffff;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

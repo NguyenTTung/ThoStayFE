@@ -1,0 +1,117 @@
+.bgr-detail-motel-user {
+  // background-color: #f3f4f6;
+.img-detail-motel-user-slide{
+    border-radius: 10px;
+
+}
+  .carousel-indicators-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Điều chỉnh khoảng cách */
+    width: 100%;
+    border-radius: 10px;
+
+    .indicator {
+      width: 18%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      margin: 0 5px;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      cursor: pointer;
+
+      &.active {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      &:not(.active) {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+    }
+    .btn-prev {
+      height: 13%;
+      width: 2rem;
+      position: absolute;
+      left: 0;
+      background: none;
+      border: none;
+    }
+    .btn-next {
+      height: 13%;
+      width: 2rem;
+      position: absolute;
+      right: 0;
+      background: none;
+      border: none;
+    }
+  }
+
+  .indicator:hover {
+    opacity: 1; /* Hiệu ứng khi hover */
+  }
+
+  .img-detail-motel-user-slide {
+    width: 100%;
+    aspect-ratio: 3 / 2; /* Tỷ lệ chiều rộng / chiều cao */
+    img {
+      object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    }
+  }
+  .carousel-control-next {
+    width: 50%;
+    height: 83%;
+  }
+  .carousel-control-prev {
+    width: 50%;
+    height: 83%;
+  }
+  .bgr-detail-motel-text-user{
+    border-radius: 10px;
+    background-color: #FEFEFE;
+    .name-detail-motel-user{
+        font-weight: 600;
+    }
+    .area-detail-motel-user{
+        font-weight: 500;
+        color: #0B1A46;
+    }
+    .price-detail-motel-user{
+        font-weight: 500;
+        color: #EE2020;
+    }
+    .text-deltail-motel-user{
+        color: #0B1A46;
+    }
+    .motachitiet-deltail-motel-user{
+        font-weight: 500;
+        color: #0B1A46;
+    }
+  }
+  //phần user
+  .bgr-detail-motel-user{
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(70, 80, 110, .3);
+    border-radius: 10px;
+    width: 100%;
+    position: sticky;
+    top:100px;
+    .width-height{
+        aspect-ratio: 1 / 1;
+    }
+    .text-detail-motel-user{
+        font-weight: 400;
+        font-size: 18px;
+        color: #595959;
+        .header-thotay{
+            font-weight: 500;
+            color: #298B90;
+        }
+    }
+
+  }
+}

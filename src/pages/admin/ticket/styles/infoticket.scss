@@ -1,0 +1,25 @@
+.infoticket {
+    .header-name-all {
+        color: #374151;
+        font-size: 25px;
+    }
+
+    .block-content {
+        .title {
+            &__content {
+                font-size: 18px;
+                color: #374151;
+            }
+        }
+    }
+
+    .block-image {
+        .fixed-size {
+            object-fit: cover;
+        }
+
+        .image-empty {
+            border: 1px dashed red;
+        }
+    }
+}

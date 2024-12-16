@@ -1,0 +1,289 @@
+//thanh cuộn modal
+.modal-content-admin {
+  max-height: 85vh; /* Giới hạn chiều cao tối đa theo phần trăm của viewport */
+  overflow-y: auto; /* Hiện thanh cuộn theo chiều dọc khi nội dung vượt quá chiều cao */
+  /* Tùy chỉnh thanh cuộn */
+  &::-webkit-scrollbar {
+    width: 6px; /* Kích thước chiều rộng của thanh cuộn */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #298b90; /* Màu của phần thanh cuộn */
+    border-radius: 10px; /* Bo góc thanh cuộn */
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Màu nền của khu vực thanh cuộn */
+    border-radius: 10px;
+  }
+}
+
+.ngontay-hover{
+  cursor: pointer;
+}
+.ngontay-hover-none{
+  cursor: none;
+}
+
+.width-height-1-1{
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+}
+//địa chỉ motel
+.motel-diachi {
+  display: flex;
+  // align-items: center;
+  display: block; /* Đảm bảo khối không bị ảnh hưởng bởi các phần tử khác */
+  white-space: nowrap; /* Ngăn xuống dòng */
+  overflow: hidden; /* Ẩn nội dung vượt ra ngoài */
+  text-overflow: ellipsis; /* Hiển thị dấu "..." */
+  width: 100%;
+  max-width: 220px; /* Giới hạn chiều dài tối đa */
+      p {
+    display: inline; /* Đảm bảo nội dung trong thẻ <p> được gộp lại thành một dòng */
+    margin: 0; /* Xóa margin mặc định */
+  }
+}
+// css hiệu ứng hover button
+.btn-transform-y2 {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  &:hover {
+    transform: translateY(-2px); // Nổi lên khi hover
+  }
+}
+.bg-color-theme-thostay {
+  background-color: #298b90;
+  border-radius: var(--bs-card-border-radius);
+  padding: 1.5rem;
+  border-radius: 1.5rem 1.5rem 0rem 0rem;
+  h2 {
+    color: white !important;
+    width: 80%;
+    text-align: center;
+    font-size: 40px;
+    margin: 0 auto;
+    font-family: Roboto Flex;
+    font-weight: 500;
+  }
+}
+
+.btn-filter {
+  &:hover {
+    background-color: #298b90; // Màu nền đậm hơn khi hover
+    color: #ffffff;
+  }
+}
+
+.btn-style {
+  width: 45%;
+  --bs-btn-padding-x: 27px;
+  --bs-btn-padding-y: 9px;
+  --bs-btn-font-family: ;
+  --bs-btn-font-size: 20px;
+  --bs-btn-font-weight: 500;
+  --bs-btn-line-height: 1.5;
+  --bs-btn-border-width: var(--bs-border-width);
+  --bs-btn-border-color: transparent;
+  --bs-btn-border-radius: 10px;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-box-shadow: 0 5px 12px rgba(26, 115, 232, 0.3);
+  --bs-btn-disabled-opacity: 0.65;
+  --bs-btn-focus-box-shadow: 0 0 0 0.25rem
+    rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+  display: inline-block;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+  font-family: var(--bs-btn-font-family);
+  font-size: var(--bs-btn-font-size);
+  font-weight: var(--bs-btn-font-weight);
+  line-height: var(--bs-btn-line-height);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+  border-radius: var(--bs-btn-border-radius);
+  -webkit-box-shadow: var(--bs-btn-box-shadow);
+}
+.btn-luu-all {
+  --bs-btn-bg: #298b90;
+  background-color: var(--bs-btn-bg);
+  color: #ffffff;
+}
+.btn-trove-all {
+  color: #0b1a46;
+  --bs-btn-bg: #ffffff;
+  background-color: var(--bs-btn-bg) !important;
+}
+.header-name-all {
+  color: #0b1a46;
+  font-family: Roboto Flex;
+}
+//css input thêm img
+.file-input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+}
+
+.file-upload-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  position: relative;
+}
+
+.camera-icon {
+  font-size: 2rem; // Kích thước của icon máy ảnh
+  color: #888; // Màu sắc của icon
+}
+
+.file-upload-input {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1/1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+//modal chung
+.btn-create-admin {
+  background-color: #298b90;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #229096; // Màu nền đậm hơn khi hover
+    color: #ffffff;
+  }
+}
+.modal-content-admin-header {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 100%;
+}
+.modal-overlay-admin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content-admin {
+  background: white;
+  border-radius: 13px 13px 12px 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  max-width: 100%;
+}
+.modal-overlay-admin {
+  .modal-content-admin {
+    .h2-modal-admin {
+      width: 100%;
+      text-align: center;
+      background-color: #298b90;
+      border-radius: 12px 12px 0px 0px;
+      padding: 20px;
+      color: white;
+    }
+    .form-admin-modal {
+      padding: 0px 20px 20px 20px;
+      label {
+        font-size: 20px;
+        font-weight: 500;
+        color: #0b1a46;
+      }
+      input:placeholder() {
+        font-size: 20px;
+        color: #82828c;
+      }
+    }
+    .btn-close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #0b1a46;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50rem;
+      border: 1px solid #d9d9d9;
+      background-color: #ffffff;
+      &:hover {
+        color: #298b90;
+      }
+    }
+  }
+}
+
+.icon-Camera-AddAccount {
+  z-index: 1;
+  border: 1px solid #d9d9d9;
+  max-width: 120px;
+  aspect-ratio: 1/1;
+  width: 80px; /* kích thước theo nhu cầu */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #298b90;
+  top: -3.5rem;
+  left: 40%;
+  background-color: #ffffff;
+}
+
+.file-input-wrapper {
+  aspect-ratio: 1 / 1;
+}
+
+//bill
+.checkbox-bill {
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #298b90;
+    border-radius: 3px;
+    cursor: pointer;
+    accent-color: #298b90;
+  }
+}
+
+.text-info-bill {
+  p {
+    color: #0b1a46;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.border-bottom-info-bill {
+  background-image: repeating-linear-gradient(
+    to right,
+    #d9d9d9,
+    #d9d9d9 7px,
+    transparent 0px,
+    transparent 20px
+  );
+  height: 2px;
+  background-size: 25px 1px;
+}
+.rounded-img-info-model {
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  opacity: inherit;
+  object-fit: cover; /* Đảm bảo ảnh giữ tỷ lệ và lấp đầy khung */
+  object-position: center; /* Canh giữa nội dung của ảnh */
+  opacity: inherit;
+}

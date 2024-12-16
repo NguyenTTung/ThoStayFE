@@ -1,0 +1,124 @@
+.login {
+    min-height: 100vh;
+    color: #7B85A2;
+    font-size: 18px;
+
+    .login-header-name{
+        color: #298B90;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .login-left {
+
+        .frm-login {
+
+            .title {
+                font-size: 48px;
+                color: #0B1A46;
+            }
+
+            .input {
+                height: 60px;
+            }
+
+            .check {
+                &:checked {
+                    background-color: #298B90;
+                }
+            }
+
+            .btn-submit {
+                height: 60px;
+                background-color: #298B90;
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+
+        .link {
+            color: #298B90;
+        }
+
+        .divider-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::before,
+            &::after {
+                content: '';
+                flex: 1 0 auto;
+                border-bottom: 1px solid #7B85A2
+            }
+
+            &:not(:empty)::before {
+                margin-right: 0.5em;
+            }
+
+            &:not(:empty)::after {
+                margin-left: 0.5em;
+            }
+        }
+
+        .scan {
+            border: 1px solid #7B85A2;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    }
+
+    .login-right {
+        .login-right-container {
+            width: 90%;
+
+            .top-right {
+
+                min-height: 300px;
+
+                .container-absolute {
+                    width: 500px;
+                    height: 100%;
+                }
+
+                .keyword {
+                    .icon {
+                        background-color: #138086;
+                        width: 50px;
+                        height: 50px;
+                        padding: 8px;
+                    }
+
+                    .content {
+                        border: 1px solid #7B85A2;
+                        color: #0B1A46;
+                    }
+                }
+
+                .search {
+                    top: 0;
+                }
+
+                .location {
+                    top: 30px;
+                    left: 220px;
+                }
+
+                .digitize {
+                    top: 80px;
+                    left: 80px;
+                }
+
+                .proceeds {
+                    top: 130px;
+                    left: -20px;
+                }
+
+                .information {
+                    top: 115px;
+                    left: 260px;
+                }
+            }
+        }
+    }
+}

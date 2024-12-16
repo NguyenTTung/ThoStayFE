@@ -1,0 +1,519 @@
+.tt-dangthue {
+  color: #00b69b;
+}
+.tt-choduyet {
+  color: #ff9500;
+}
+.tt-khoa {
+  color: #e83838;
+}
+.tt-chitiet {
+  color: #6226ef;
+}
+.btn-chitiet {
+  background-color: #8470ff;
+
+  &:hover {
+    background-color: #5a5eff; // Màu nền đậm hơn khi hover
+  }
+}
+.btn-xoa-add-motel{
+    --bs-btn-bg : #ee2020d0;
+    background-color           : var(--bs-btn-bg);
+    color:#ffffff;
+}
+.btn-duyet {
+  background-color: #00b69bc2;
+
+  &:hover {
+    background-color: #00939b; // Màu nền đậm hơn khi hover
+  }
+}
+
+.btn-tuchoi {
+  background-color: #f9960ccc;
+
+  &:hover {
+    background-color: #ff9500e0; // Màu nền đậm hơn khi hover
+  }
+}
+
+.btn-khoa {
+  background-color: #f83838;
+
+  &:hover {
+    background-color: #c62828; // Màu nền đậm hơn khi hover
+  }
+}
+
+.btn-mokhoa {
+  background-color: #00b074;
+
+  &:hover {
+    background-color: #009966; // Màu nền đậm hơn khi hover
+  }
+}
+
+.text-overflow-motel {
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.padding-y-9px {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+table {
+  .brg-table-tro th:first-child {
+    border-top-left-radius: 1.5rem;
+  }
+
+  .brg-table-tro th:last-child {
+    border-top-right-radius: 1.5rem;
+  }
+  thead {
+    .brg-table-tro {
+      --bs-table-bg: #00b07510 !important ;
+    }
+  }
+
+  tbody {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+
+    tr {
+      border: 1px solid #ebebeb;
+      .icon-table-motel {
+        color: #00939b;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        &:hover {
+          transform: translateY(-2px); // Nổi lên khi hover
+        }
+      }
+      td {
+        padding-top: 0.8rem !important;
+        padding-bottom: 0.8rem !important;
+      }
+    }
+    tr:last-child {
+      .brg-table-tro th:first-child {
+        border-bottom-left-radius: 1.5rem;
+      }
+
+      .brg-table-tro th:last-child {
+        border-bottom-right-radius: 1.5rem;
+      }
+    }
+  }
+}
+
+//infomotel
+
+  .form-motel-info {
+    .carousel{
+      .carousel-inner{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
+
+
+.text-infomotel{
+  h4{
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  .text-infomotel-c2{
+    margin-left: 1rem;
+    color: #0b1a46;
+    .text-infomotel-c3{
+      font-size: 1.2rem;
+      margin-left: 1rem;
+      color: #0b1a46;
+    }
+  }
+  .text-infomotel-c3{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    color: #0b1a46;
+    font-weight: 500;
+
+  }
+  table{
+    tbody{
+      tr{
+        border: none;
+        td{
+          padding:0.5rem !important;
+        }
+
+      }
+    }
+  }
+}
+
+//modal
+
+.modal-overlay-duyet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content-duyet {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 100%;
+}
+.modal-overlay-duyet {
+  .modal-content-duyet {
+    .h2-modal-duyet {
+      width: 80%;
+      text-align: center;
+      font-size: 28px;
+      margin: 0 auto;
+    }
+    .btn-duyet {
+      width: 45%;
+      --bs-btn-padding-x: 27px;
+      --bs-btn-padding-y: 9px;
+      --bs-btn-font-family: ;
+      --bs-btn-font-size: 20px;
+      --bs-btn-font-weight: 500;
+      --bs-btn-line-height: 1.5;
+      --bs-btn-border-width: var(--bs-border-width);
+      --bs-btn-border-color: transparent;
+      --bs-btn-border-radius: 5rem;
+      --bs-btn-hover-border-color: transparent;
+      --bs-btn-box-shadow: 0 5px 12px rgba(26, 115, 232, 0.3);
+      --bs-btn-disabled-opacity: 0.65;
+      --bs-btn-focus-box-shadow: 0 0 0 0.25rem
+        rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+      display: inline-block;
+      padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+      font-family: var(--bs-btn-font-family);
+      font-size: var(--bs-btn-font-size);
+      font-weight: var(--bs-btn-font-weight);
+      line-height: var(--bs-btn-line-height);
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      user-select: none;
+      border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+      border-radius: var(--bs-btn-border-radius);
+      -webkit-box-shadow: var(--bs-btn-box-shadow);
+    }
+    .btn-duyet-luu {
+      --bs-btn-bg: #298b90;
+      background-color: var(--bs-btn-bg);
+      color: #ffffff;
+    }
+    .btn-duyet-trove {
+      color: #0b1a46;
+      --bs-btn-bg: #ffffff;
+      background-color: var(--bs-btn-bg) !important;
+    }
+    .form-duyet-modal {
+      label {
+        font-size: 20px;
+        font-weight: 500;
+        color: #0b1a46;
+      }
+      input:placeholder() {
+        font-size: 20px;
+        color: #82828c;
+      }
+    }
+    .btn-close-modal-thaotac {
+      position: absolute;
+      top: 0px;
+      right: 15px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #0b1a46;
+      width: 3.5rem;
+      height: 3.5rem;
+      &:hover {
+        color: #298b90;
+      }
+    }
+  }
+}
+
+.modal-overlay-khoa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content-khoa {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 100%;
+}
+.modal-overlay-khoa {
+  .modal-content-khoa {
+    .h2-modal-khoa {
+      width: 80%;
+      text-align: center;
+      font-size: 28px;
+      margin: 0 auto;
+    }
+    .form-khoa-modal {
+      label {
+        font-size: 20px;
+        font-weight: 500;
+        color: #0b1a46;
+      }
+      input:placeholder() {
+        font-size: 20px;
+        color: #82828c;
+      }
+    }
+    .btn-close-modal-thaotac {
+      position: absolute;
+      top: 0px;
+      right: 15px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #0b1a46;
+      width: 3.5rem;
+      height: 3.5rem;
+      &:hover {
+        color: #298b90;
+      }
+    }
+  }
+}
+
+//add motel css
+.container-fluid-add-motel {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  padding-top: calc(75px + 15px);
+  .card {
+    --bs-card-spacer-y: 30px;
+    --bs-card-spacer-x: 30px;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-title-color: #111c2d;
+    --bs-card-subtitle-color: #111c2d;
+    --bs-card-border-width: 0px;
+    --bs-card-border-color: var(--bs-border-color-translucent);
+    --bs-card-border-radius: 0.625rem;
+    --bs-card-box-shadow: 0px 2px 6px rgba(37, 83, 185, 0.1);
+    --bs-card-inner-border-radius: calc(0.625rem - 0px);
+    --bs-card-cap-padding-y: 15px;
+    --bs-card-cap-padding-x: 30px;
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: #fff;
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: var(--bs-body-color);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+    -webkit-box-shadow: var(--bs-card-box-shadow);
+    box-shadow: var(--bs-card-box-shadow);
+  }
+}
+
+.btn-close-img-add-motel {
+  background-color: #298B90 ;
+  border-radius: 5rem;
+  position: absolute;
+  top: 0.2rem;
+  right:0.3rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    color:  #34B1B5;
+  }
+}
+.file-name{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 1.2;           // Điều chỉnh khoảng cách giữa các dòng
+  max-height: 2.6em;          // Tương ứng với 3 dòng, có thể thay đổi
+  -webkit-line-clamp: 2;      // Giới hạn số dòng hiển thị
+  word-break: break-all;      // Ngắt dòng giữa từ nếu quá dài
+  max-width: 100%;            // Đảm bảo tên file không vượt quá chiều rộng container
+  white-space: normal;         // Cho phép xuống dòng khi cần
+  overflow-wrap: break-word;   // Ngắt dòng từ nếu dài quá
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  height: 100%;
+}
+.active-filter-motel {
+  background-color: #298B90 !important;
+  color: #ffffff !important;
+}
+.active-filter-motel:hover {
+  background-color: #298B90 !important;
+  color: #ffffff !important;
+}
+
+.table-motel {
+  tr {
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(41, 139, 144, 0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    td {
+      padding: 15px 10px;
+      vertical-align: middle;
+    }
+  }
+}
+
+//index motel owner
+.ih-indexowner-help {
+  .icon-index-owner-motel-help-trong {
+    border: 3px solid #00b074;
+    border-radius: 0.3rem;
+  }
+  .icon-index-owner-motel-help-sudung {
+    border: 3px solid #ffb168;
+    border-radius: 0.3rem;
+  }
+  .icon-index-owner-motel-help-baotri {
+    border: 3px solid #a6a6a6;
+    border-radius: 0.3rem;
+  }
+  .h4-index-owner-motel-help {
+  }
+}
+
+.index-motel {
+  .table-motel-index {
+    background-color: #F3F2F7 !important;
+    .text-table-index-motel-owner {
+      font-size: 16px;
+      font-weight: 500;
+      color: #0b1a46;
+    }
+    .btn-sua-index-motel-owner {
+      background-color: #00b69b50;
+      color: #00a088;
+      font-weight: 500;
+    }
+    .btn-xoa-index-motel-owner {
+      font-weight: 500;
+      background-color: #f8383850;
+      color: #e61f1f;
+    }
+    .btn-yeucauduyet-index-motel-owner {
+      background-color: #00b07450;
+      color: #078057;
+      font-weight: 500;
+    }
+    .phong-table-motel-owner {
+      .phong-table-motel-owner-2 {
+        .phong-table-motel-owner-3 {
+          height: 80px;
+          border: 1px solid #898989;
+          border-radius: 0.8rem;
+          box-shadow: 1px 4px 11px rgba(26, 115, 232, 0.3);;
+          .text-phong-table-motel-owner {
+            font-size: 16px;
+            font-weight: 500;
+            color: #0b1a46;
+          }
+        }
+        .border-dangtrong {
+          border-left: 11px solid #00b074;
+        }
+        .border-dangsudung {
+          border-left: 11px solid #ffb168;
+        }
+        .border-dangbaotri {
+          border-left: 11px solid #a6a6a6;
+        }
+      }
+    }
+  }
+}
+
+//add room css
+.color-tab-addmotel{
+  a{
+    color: #298B90;
+    cursor: pointer;
+  }
+}
+
+.h4-add-motel{
+  color: #0b1a46;
+}
+
+.form-edit-motel{
+  .form-group{
+  }
+}
+
+.err-text{
+  display: block;
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+}
+.section-search-add-motel-address{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+    border-radius: 10px;
+  .btn-search-add-motel-address {
+    border: none;
+  }
+}
