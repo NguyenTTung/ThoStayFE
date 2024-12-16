@@ -43,9 +43,6 @@ function HomeMotelNew() {
     name: string;
     code: number | null;
   };
-  const [provinces, setProvinces] = useState<LocationOption[]>([]);
-  const [districts, setDistricts] = useState<LocationOption[]>([]);
-  const [wards, setWards] = useState<LocationOption[]>([]);
 
   const [selectedProvince, setSelectedProvince] = useState<LocationOption>({
     name: "Tỉnh",
@@ -57,11 +54,12 @@ function HomeMotelNew() {
   });
   const [selectedWard, setSelectedWard] = useState<string>("Phường");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  console.log(setSelectedProvince , setSearchQuery);
   useEffect(() => {
     // Lấy danh sách tỉnh
     axios
       .get("https://provinces.open-api.vn/api/p/")
-      .then((response) => setProvinces(response.data))
+      .then((response) => response.data)
       .catch((error) => console.error("Error fetching provinces:", error));
   }, []);
 
@@ -72,11 +70,10 @@ function HomeMotelNew() {
         .get(
           `https://provinces.open-api.vn/api/p/${selectedProvince.code}/?depth=2`
         )
-        .then((response) => setDistricts(response.data.districts))
+        .then((response) => response.data.districts)
         .catch((error) => console.error("Error fetching districts:", error));
     }
     setSelectedDistrict({ name: "Thành phố", code: null });
-    setWards([]);
     setSelectedWard("Phường");
   }, [selectedProvince]);
 
@@ -89,7 +86,7 @@ function HomeMotelNew() {
         .get(
           `https://provinces.open-api.vn/api/d/${selectedDistrict.code}/?depth=2`
         )
-        .then((response) => setWards(response.data.wards))
+        .then((response) => response.data.wards)
         .catch((error) => console.error("Error fetching wards:", error));
     }
     setSelectedWard("Phường");
@@ -216,7 +213,7 @@ function HomeMotelNew() {
               size="sm"
               color=""
               className="me-2 fa-spin"
-            ></FontAwesomeIcon>
+              ></FontAwesomeIcon>
             Xem thêm
           </button>
         </div>

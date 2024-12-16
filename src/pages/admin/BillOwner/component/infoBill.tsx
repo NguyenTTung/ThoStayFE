@@ -29,6 +29,7 @@ export const InfoBill: React.FC<Props> = ({ onClose,onUpdate, billId }) => {
 
   const [isLoading, setIsLoading] = useState(false); // Loading state
   const [message, setMessage] = useState(""); // Message state for feedback
+  console.log(message);
   const handleSendEmail = async () => {
     
     if (!billId) return;

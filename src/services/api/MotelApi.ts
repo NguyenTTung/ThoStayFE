@@ -1,36 +1,12 @@
 // API motel
 import axios from 'axios';
 import axiosInstance, { API_URL } from '../apiConfig';
-import { GetHistoryByRoomIdDTO, BillByIdDTO, GetPriceByRoomTypeDTO, GetRoomTypeByAddElicWaterDTO, SendElicWaterDTO, AddServiceDTO, AddUserRoomDTO, BillDTO, EditMotelDTO, EditServiceDTO, GetMotelEditDTO, GetRoomTypeByEditDTO, GetRoomTypeDTO, MotelPaginationResponse, RoomDTO, RoomUserDTO, BillPaginationResponse, HistoryPaginationResponse } from '../Dto/MotelDto';
+import {BillByIdDTO, GetPriceByRoomTypeDTO, SendElicWaterDTO, AddServiceDTO, AddUserRoomDTO, EditMotelDTO, EditServiceDTO, GetMotelEditDTO, RoomDTO, RoomUserDTO, BillPaginationResponse, HistoryPaginationResponse, MotelPaginationResponse, GetRoomTypeDTO, GetRoomTypeByAddElicWaterDTO, GetRoomTypeByEditDTO } from '../Dto/MotelDto';
 import { ResponseDTO } from './RepositoryDto';
-import { FilterProps } from '@/pages/admin/motel';
-import { getAccountApi } from './authApi';
 import { BillQueryDto } from '@/pages/admin/room/component/detailroom/billroom';
 import { HistoryQueryDto } from '@/pages/admin/room/component/detailroom/historyroom';
-
-export const getMotelByOwnerApi = async (
-	query: FilterProps
-): Promise<MotelPaginationResponse> => {
-	var user = await getAccountApi();
-	const response = await axios.get<ResponseDTO<MotelPaginationResponse>>(
-		`${API_URL}/Room/get-motel-by-owner/${user.data.data.id}`,
-		{
-			params: query,
-		}
-	);
-	return response.data.data;
-};
-
-export const getMotelByAdminApi = async (
-	query: FilterProps
-): Promise<MotelPaginationResponse> => {
-	const response = await axiosInstance.get<
-		ResponseDTO<MotelPaginationResponse>
-	>(`${API_URL}/Room/get-all-motel-by-admin`, {
-		params: query,
-	});
-	return response.data.data;
-};
+import { FilterProps } from '@/pages/admin/motel';
+import { getAccountApi } from './authApi';
 
 export const AddMotel = async (formData: FormData) => {
 	const response = await axios.post<ResponseDTO<null>>(
@@ -127,16 +103,6 @@ export const DeleteMotel = async (id: number) => {
 	return response.data;
 };
 
-export const GetRoomTypeByMotelId = async (id: string | undefined) => {
-	if (!id) {
-		console.log("idMotel is undefined");
-		return;
-	}
-	const response = await axios.get<ResponseDTO<GetRoomTypeDTO[]>>(
-		`${API_URL}/Room/get-room-type-by-motel-id/${id}`
-	);
-	return response.data;
-};
 
 export const AddRoomApi = async (data: {
 	roomTypeId: number;
@@ -168,24 +134,7 @@ export const GetRoomByIdApi = async (id: string | undefined) => {
 	return response.data;
 };
 
-export const GetRoomTypeByEditApi = async (id: string | undefined) => {
-	if (!id) {
-		console.log("id is undefined");
-		return;
-	}
-	const response = await axios.get<ResponseDTO<GetRoomTypeByEditDTO>>(
-		`${API_URL}/Room/get-room-type-by-edit/${id}`
-	);
-	return response.data;
-};
 
-export const EditRoomTypeApi = async (data: FormData) => {
-	const response = await axios.put<ResponseDTO<null>>(
-		`${API_URL}/Room/edit-room-type`,
-		data
-	);
-	return response.data;
-};
 
 export const FindUser = async (data: string) => {
 	const response = await axios.get<ResponseDTO<RoomUserDTO[]>>(
@@ -240,10 +189,7 @@ export const GetHistoryByRoomIdApi = async (id: number, query: HistoryQueryDto) 
 	return response.data;
 };
 
-export const GetRoomTypeByAddElicWaterApi = async (id: number) => {
-	const response = await axios.get<ResponseDTO<GetRoomTypeByAddElicWaterDTO[]>>(`${API_URL}/Room/get-room-by-export-bill/${id}`);
-	return response.data;
-};
+
 
 export const SendElicWaterApi = async (data: SendElicWaterDTO) => {
 	const dataSend = {
@@ -265,5 +211,59 @@ export const SentBillToEmail = async (billId: number) => {
 	const response = await axios.get(`${API_URL}/send-bill-email`, {
 		params: { billId }, // Gửi `billId` như query string
 	  });
+	return response.data;
+};
+
+export const getMotelByOwnerApi = async (query: FilterProps): Promise<MotelPaginationResponse> => {
+	const user = await getAccountApi();
+	const response = await axios.get<ResponseDTO<MotelPaginationResponse>>(
+		`${API_URL}/Room/get-motel-by-owner/${user.data.data.id}`,
+		{
+			params: query,
+		}
+	);
+	return response.data.data;
+};
+
+export const getMotelByAdminApi = async (
+	query: FilterProps
+): Promise<MotelPaginationResponse> => {
+	const response = await axiosInstance.get<
+		ResponseDTO<MotelPaginationResponse>
+	>(`${API_URL}/Room/get-all-motel-by-admin`, {
+		params: query,
+	});
+	return response.data.data;
+};
+export const GetRoomTypeByMotelId = async (id: string | undefined) => {
+	if (!id) {
+		console.log("idMotel is undefined");
+		return;
+	}
+	const response = await axios.get<ResponseDTO<GetRoomTypeDTO[]>>(
+		`${API_URL}/Room/get-room-type-by-motel-id/${id}`
+	);
+	return response.data;
+};
+
+export const GetRoomTypeByAddElicWaterApi = async (id: number) => {
+    const response = await axios.get<ResponseDTO<GetRoomTypeByAddElicWaterDTO[]>>(`${API_URL}/Room/get-room-by-export-bill/${id}`);
+    return response.data;
+};
+export const GetRoomTypeByEditApi = async (id: string | undefined) => {
+	if (!id) {
+		console.log("id is undefined");
+		return;
+	}
+	const response = await axios.get<ResponseDTO<GetRoomTypeByEditDTO>>(
+		`${API_URL}/Room/get-room-type-by-edit/${id}`
+	);
+	return response.data;
+};
+export const EditRoomTypeApi = async (data: FormData) => {
+	const response = await axios.put<ResponseDTO<null>>(
+		`${API_URL}/Room/edit-room-type`,
+		data
+	);
 	return response.data;
 };

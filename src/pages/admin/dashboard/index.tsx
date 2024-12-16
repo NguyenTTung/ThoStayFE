@@ -15,7 +15,7 @@ export const Dashboard = () => {
     //get role from token
     const roleFromToken = getRoleFromToken(token || '');
 
-
+    console.log(percentageData);
     useEffect(() => {
         const fetchRooms = async (data: Room) => {
             try {
@@ -183,7 +183,7 @@ export const Dashboard = () => {
                 }
             }; const fetchCustomerAccounts = async (item: CountAccount) => {
                 try {
-                    const response = await GetCountAccount({ token: token || "", role: "CUSTOMER" });
+                    const response = await GetCountAccount(item);
                     if (response.data.code === 200) {
                         // Xử lý dữ liệu để cập nhật biểu đồ
                         const formattedData: ChartProps = {

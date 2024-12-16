@@ -1,6 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 import "./style/room.scss";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import AddElicWater from "./component/addElicWater";
 import Addroom from "./component/addroom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,17 +9,9 @@ import { GetRoomTypeDTO, MotelDTO } from "@/services/Dto/MotelDto";
 import Roomtype from "./component/roomtype";
 import Addroomintype from "./component/addroomintype";
 import EditRoomType from "./component/editRoomType";
-import {
-  ApproveMotelApi,
-  GetRoomTypeByMotelId,
-  LockMotelApi,
-  RejectMotelApi,
-  UnLockMotelApi,
-} from "@/services/api/MotelApi";
-import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-
+import { GetRoomTypeByMotelId } from "@/services/api/MotelApi";
 
 export const Roomtesst = () => {
 
@@ -33,17 +25,15 @@ export const Roomtesst = () => {
   const { user } = useSelector((state: RootState) => state.user);
 
   const [selectedRoomId, setSelectedRoomId] = useState<number | null>(null);
-  const { id } = useParams();
 
   const toggleModal = (
     modalName: keyof typeof modalState,
-    param: number | any[] = []
+    param: number | number[] = []
   ) => {
     setModalState((prev) => ({ ...prev, [modalName]: !prev[modalName] }));
 
     if (Array.isArray(param)) {
       // Xử lý khi param là mảng rooms
-      setSelectedRooms(param);
     } else {
       // Xử lý khi param là roomId
       setSelectedRoomId(param);
@@ -64,138 +54,23 @@ export const Roomtesst = () => {
 
 
 
-  useEffect(() => {
-    LoadData();
-  }, [motelId]);
+
+console.log(setMotel);
 
 
+const LoadData = useCallback(async () => {
+  try {
+    const response = await GetRoomTypeByMotelId(motelId);
+    if (response) setRoomType(response.data);
+    console.log(roomType);
+  } catch (error) {
+    console.log(error);
+  }
+}, [motelId, roomType]); // roomType chỉ cần có trong dependency nếu bạn sử dụng nó trong hàm
 
-  const LoadData = async () => {
-    try {
-      const response = await GetRoomTypeByMotelId(motelId);
-      if (response) setRoomType(response.data);
-      console.log(roomType);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const [selectedRooms, setSelectedRooms] = useState<any[]>([]);
-  //thao tác motel (admin)
-
-  const HandleApprove = async (id: number) => {
-    const response = await ApproveMotelApi(id);
-    if (response.code === 200) {
-      Swal.fire({
-        icon: "success",
-        title: "Thành công",
-        text: "Duyệt dãy trọ thành công",
-      });
-      await LoadData();
-    }
-  };
-
-  const HandleReject = async (id: number) => {
-    const response = await RejectMotelApi(id);
-    if (response.code === 200) {
-      Swal.fire({
-        icon: "warning",
-        title: "Từ chối!",
-        text: "Từ chối dãy trọ thành công",
-      });
-      await LoadData();
-    }
-  };
-
-  const HandleLock = async (id: number) => {
-    const response = await LockMotelApi(id);
-    if (response.code === 200) {
-      Swal.fire({
-        icon: "error",
-        title: "Khóa!",
-        text: "Khóa dãy trọ thành công",
-      });
-      await LoadData();
-    }
-  };
-
-  const HandleUnLock = async (id: number) => {
-    const response = await UnLockMotelApi(id);
-    if (response.code === 200) {
-      Swal.fire({
-        icon: "success",
-        title: "Mở khóa!",
-        text: "Mở khóa dãy trọ thành công",
-      });
-      await LoadData();
-    }
-  };
-
-  const CheckStatus_ThaoTac = (status: number, id: number) => {
-    if (status === 1) {
-      return (
-        <>
-          <button
-            className="btn btn-create-notification btn-transform-y2"
-            onClick={() => HandleApprove(id)}
-          >
-            <FontAwesomeIcon
-              icon={faPlus}
-              size="lg"
-              color="#fffffff"
-              className="icon-table-motel me-3"
-            />
-            Duyệt
-          </button>
-          <button
-            className="btn btn-create-notification btn-transform-y2"
-            onClick={() => HandleReject(id)}
-          >
-            <FontAwesomeIcon
-              icon={faPlus}
-              size="lg"
-              color="#fffffff"
-              className="icon-table-motel me-3"
-            />
-            Từ chối
-          </button>
-        </>
-      );
-    } else if (status === 2) {
-      return (
-        <>
-          <button
-            className="btn btn-create-notification btn-transform-y2"
-            onClick={() => HandleLock(id)}
-          >
-            <FontAwesomeIcon
-              icon={faPlus}
-              size="lg"
-              color="#fffffff"
-              className="icon-table-motel me-3"
-            />
-            Khóa
-          </button>
-        </>
-      );
-    } else if (status === 3) {
-      return (
-        <>
-          <button
-            className="btn btn-create-notification btn-transform-y2"
-            onClick={() => HandleUnLock(id)}
-          >
-            <FontAwesomeIcon
-              icon={faPlus}
-              size="lg"
-              color="#fffffff"
-              className="icon-table-motel me-3"
-            />
-            Mở khóa
-          </button>
-        </>
-      );
-    }
-  };
+useEffect(() => {
+  LoadData();
+}, [motelId, LoadData]);
 
   return (
     <>

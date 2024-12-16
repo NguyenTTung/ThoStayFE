@@ -1,8 +1,6 @@
 import { GetHistoryByRoomIdApi } from '@/services/api/MotelApi';
-import { GetHistoryByRoomIdDTO, HistoryPaginationResponse } from '@/services/Dto/MotelDto';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import {HistoryPaginationResponse } from '@/services/Dto/MotelDto';
+import React, { useCallback, useEffect, useState } from 'react';
 import { formatDateTime } from './billroom';
 
 export interface HistoryQueryDto {
@@ -19,17 +17,17 @@ const Historyroom = ({ roomId }: { roomId: number }) => {
 		pageSize: 5,
 	});
 	const [pageactive, setPageactive] = useState<number>(query.pageNumber);
-
-	useEffect(() => {
-		fetchData(query);
-	}, [query]);
-
-	const fetchData = async (query: HistoryQueryDto) => {
+	
+	const fetchData = useCallback(async (query: HistoryQueryDto) => {
 		const response = await GetHistoryByRoomIdApi(roomId, query);
 		if (response.code === 200) {
 			setHistory(response.data);
 		}
-	};
+	}, [roomId]);
+	
+	useEffect(() => {
+		fetchData(query);
+	}, [query, fetchData]);
 
 	const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setQuery({ ...query, search: e.target.value });

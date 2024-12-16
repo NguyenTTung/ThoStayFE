@@ -5,7 +5,7 @@ interface BaotriroomProps {
   roomId: number;
 }
 
-const Baotriroom: React.FC<BaotriroomProps> = ({ onClose, roomId }) => {
+const Baotriroom: React.FC<BaotriroomProps> = ({ onClose }) => {
   return (
     <>
       <div className="modal-overlay-admin">

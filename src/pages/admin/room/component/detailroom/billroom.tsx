@@ -1,10 +1,7 @@
 import InfoBill from '@/pages/admin/BillOwner/component/infoBill';
-import { GetBill, SentBillToEmail } from '@/services/api/MotelApi';
+import { GetBill } from '@/services/api/MotelApi';
 import { BillDTO, BillPaginationResponse } from '@/services/Dto/MotelDto';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
-import Swal from 'sweetalert2';
 
 export const formatCurrency = (amount: number) => {
 	return new Intl.NumberFormat('vi-VN', {
@@ -111,7 +108,7 @@ export const Billroom: React.FC<{ roomId: number }> = ({ roomId }) => {
 		);
 	};
 
-	const buttonConfirm = (status: number, billId: number) => {
+	const buttonConfirm = (status: number) => {
 		return <>{status == 1 ? <span className='tt-khoa badge bg-light-danger rounded-pill p-2 fs-2'>Chưa thanh toán</span> : <span className='tt-dangthue bg-light-success rounded-pill p-2 fs-2'>Đã thanh toán</span>}</>;
 	};
 	const handleUpdate = () => {
@@ -200,7 +197,7 @@ export const Billroom: React.FC<{ roomId: number }> = ({ roomId }) => {
 								<td>
 									<p className='fs-3 fw-normal mb-0'>{highlightText(formatCurrency(service?.total).toString(), query.search)}</p>
 								</td>
-								<td>{buttonConfirm(service?.status, service?.id)}</td>
+								<td>{buttonConfirm(service?.status)}</td>
 							</tr>
 						))}
 					</tbody>

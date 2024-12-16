@@ -6,7 +6,7 @@ interface EditRoomProps {
   roomId: number;
 }
 
-const Editroom: React.FC<EditRoomProps> = ({ onClose, motelId, roomId }) => {
+const Editroom: React.FC<EditRoomProps> = ({ onClose}) => {
 
   return (
     <>

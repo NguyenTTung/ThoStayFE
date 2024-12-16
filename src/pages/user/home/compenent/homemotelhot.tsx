@@ -66,7 +66,7 @@ function HomeMotelHot() {
       .then((response) => setProvinces(response.data))
       .catch((error) => console.error("Error fetching provinces:", error));
   }, []);
-
+  console.log(provinces , districts, wards , setSelectedProvince , setSearchQuery);
   useEffect(() => {
     if (selectedProvince.code) {
       // Lấy danh sách quận/huyện khi tỉnh được chọn
@@ -126,7 +126,7 @@ function HomeMotelHot() {
         </div>
       </div>
       <div className="row">
-        {motels && motels.length > 0 && motels.map((roomtype, index) => (
+        {motels && motels.length > 0 && motels.map((roomtype) => (
           <div key={roomtype.id} className="col-6 col-md-4 col-lg-4 col-xl-3 mt-3 ngontay-hover" onClick={() => handleMotelClick(roomtype.id)}>
             <div className="border-motel-info-home">
               <div className="">

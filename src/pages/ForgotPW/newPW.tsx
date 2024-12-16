@@ -69,7 +69,7 @@ const NewPW = () => {
         });
       }
 
-    } catch (error) {
+    } catch {
       Swal.fire({
         icon: 'error',
         title: 'Lỗi!',
@@ -77,13 +77,6 @@ const NewPW = () => {
       });
     }
   };
-
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setIsPasswordVisible(!isPasswordVisible);
-  };
-
   return (
     <div className="formverifyfw container-fluid">
       <div className="row align-items-center w-100 align-items-center h-forgotpw">

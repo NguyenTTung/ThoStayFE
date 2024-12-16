@@ -1,4 +1,4 @@
-import { AddUserRoomApi, DeleteUserRoomApi, FindUser } from '@/services/api/MotelApi';
+import { AddUserRoomApi, FindUser } from '@/services/api/MotelApi';
 import { AddUserRoomDTO, RoomUserDTO } from '@/services/Dto/MotelDto';
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
@@ -50,23 +50,6 @@ const AddUserRoom: React.FC<AddUserRoomProps> = ({ onClose, roomId }) => {
                 title: "Thất bại!",
                 text: "Thêm người thuê thất bại!",
               });
-		}
-	};
-
-	const handleDeleteUserRoom = async (userId: number) => {
-		const response = await DeleteUserRoomApi(roomId, userId);
-		if (response.code === 200) {
-			Swal.fire({
-				icon: "success",
-				title: "Thành công",
-				text: "Xóa người thuê thành công!",
-			  }).then(() => {
-				// Lưu trạng thái thông báo vào localStorage
-				localStorage.setItem("showNotification", "true");
-				onClose();
-				location.reload();
-				});
-
 		}
 	};
 

@@ -1,5 +1,4 @@
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import RegisterOwner_1 from './registerOwner_1';
 import RegisterOwner_2 from './registerOwner_2';
@@ -70,22 +69,25 @@ const RegisterOwner = ({ show, onHide }: Props) => {
                             quantityRoom: data?.quantityRoom,
                             ownerId: user.id,
                         };
-
+    
                         Object.entries(basicFields).forEach(([key, value]) => {
                             submitFormData.append(key, String(value || ''));
                         });
-
-
-                        data?.services && data.services.forEach((service, index) => {
-                            submitFormData.append(`Services[${index}].name`, service.name);
-                            submitFormData.append(`Services[${index}].description`, service.description);
-                            submitFormData.append(`Services[${index}].price`, service.price.toString());
-                        });
-
-                        data?.images && data?.images.forEach((file) => {
-                            submitFormData.append('images', file);
-                        });
-
+    
+                        if (data?.services) {
+                            data.services.forEach((service, index) => {
+                                submitFormData.append(`Services[${index}].name`, service.name);
+                                submitFormData.append(`Services[${index}].description`, service.description);
+                                submitFormData.append(`Services[${index}].price`, service.price.toString());
+                            });
+                        }
+    
+                        if (data?.images) {
+                            data.images.forEach((file) => {
+                                submitFormData.append('images', file);
+                            });
+                        }
+    
                         try {
                             onHide();
                             setStep(1);
@@ -97,15 +99,14 @@ const RegisterOwner = ({ show, onHide }: Props) => {
                                     text: 'Thành công',
                                 });
                                 dispatch(fetchMyMotel());
-                            }
-                            else {
+                            } else {
                                 Swal.fire({
                                     icon: 'error',
                                     title: 'Lỗi!',
                                     text: 'Thất bại',
                                 });
                             }
-                        } catch (error) {
+                        } catch {
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Lỗi!',
@@ -113,7 +114,7 @@ const RegisterOwner = ({ show, onHide }: Props) => {
                             });
                         }
                     }
-                } catch (error) {
+                } catch {
                     onHide();
                     setStep(1);
                     Swal.fire({
@@ -123,10 +124,10 @@ const RegisterOwner = ({ show, onHide }: Props) => {
                     });
                 }
             };
-
+    
             sendDataToApi();
         }
-    }, [step, data]);
+    }, [step, data, dispatch, onHide]);
 
     return (
         <Modal

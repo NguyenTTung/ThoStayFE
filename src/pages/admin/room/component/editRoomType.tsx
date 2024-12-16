@@ -11,7 +11,9 @@ interface EditRoomProps {
   onClose: () => void;
   roomTypeId: string;
 }
-
+interface Image {
+  link: string;
+}
 const EditRoomType: React.FC<EditRoomProps> = ({ onClose, roomTypeId }) => {
   // Thêm state errors ở đầu component
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -104,11 +106,10 @@ const EditRoomType: React.FC<EditRoomProps> = ({ onClose, roomTypeId }) => {
 
       if (response?.data) {
         setValues(response.data);
-        setImages(response.data.images.map((image) => image.link));
-      }
+        setImages(response.data.images.map((image: Image) => image.link));      }
     };
     LoadData();
-  }, []);
+  }, [roomTypeId]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -180,7 +181,7 @@ const EditRoomType: React.FC<EditRoomProps> = ({ onClose, roomTypeId }) => {
       });
 
       // Log để kiểm tra
-      for (let pair of submitFormData.entries()) {
+      for (const pair of submitFormData.entries()) {
         console.log(pair[0], pair[1]);
       }
 
@@ -197,7 +198,7 @@ const EditRoomType: React.FC<EditRoomProps> = ({ onClose, roomTypeId }) => {
 
         });
       }
-    } catch (error: any) {
+    } catch {
       Swal.fire({
         icon: "error",
         title: "Thất bại!",

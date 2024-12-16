@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
 import { RootState, userAppDispatch } from "@/redux/store";
 import { fetchPackage } from "@/components/header/redux/action";
-import { useLocation, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { getCountRoomApi } from "@/services/api/HomeApi";
 
 interface Addroomintype {
@@ -30,7 +30,6 @@ const Addroomintype: React.FC<Addroomintype> = ({ onClose, roomTypeId }) => {
   }, [dispatch]);
 
   const [countRoom1, setCountRoom1] = useState<number>(0);
-  const { id } = useParams();
   const { motelId } = useParams();
 
   useEffect(() => {
@@ -73,7 +72,7 @@ const Addroomintype: React.FC<Addroomintype> = ({ onClose, roomTypeId }) => {
       });
       return;
     }
-    var response = await AddRoomApi(data);
+    const response = await AddRoomApi(data);
     if (response) {
       Swal.fire({
         icon: "success",

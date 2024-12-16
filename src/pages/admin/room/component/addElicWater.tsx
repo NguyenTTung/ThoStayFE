@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GetPriceByRoomTypeDTO, GetRoomTypeByAddElicWaterDTO, GetRoomTypeDTO_Room, SendElicWaterDTO } from '@/services/Dto/MotelDto';
+import { GetRoomTypeByAddElicWaterDTO, SendElicWaterDTO } from '@/services/Dto/MotelDto';
 import { GetPriceByRoomTypeApi, GetRoomTypeByAddElicWaterApi, SendElicWaterApi } from '@/services/api/MotelApi';
 import { formatCurrency } from './detailroom/billroom';
 import { toast } from 'react-toastify';
@@ -15,12 +15,6 @@ interface BillCalculation {
 
 const AddElicWater: React.FC<{ roomTypeId: number; onClose: () => void }> = ({ roomTypeId, onClose }) => {
 	const [isConfirm, setIsConfirm] = useState(false);
-	const [price, setPrice] = useState<GetPriceByRoomTypeDTO>({
-		roomTypeId: 0,
-		price: 0,
-		price_Electric: 0,
-		price_Water: 0,
-	});
 
 	const [billDetails, setBillDetails] = useState<BillCalculation>({
 		totalElectric: '',
@@ -102,7 +96,7 @@ const AddElicWater: React.FC<{ roomTypeId: number; onClose: () => void }> = ({ r
 			}
 		};
 		LoadData();
-	}, []);
+	}, [roomTypeId]);
 
 	const [roomId, setRoomId] = useState<number>(0);
 

@@ -23,7 +23,6 @@ import { UserProvider } from "@/services/api/UserContext";
 
 import Profile from "../admin/Profile/index";
 import ChangePassword from '../admin/Profile/ChangePass';
-import Testcode from "@/context/testcode";
 import Package from "./Profile/package";
 export const Admin = () => {
   return (
@@ -35,7 +34,6 @@ export const Admin = () => {
           <Route path="adminprofile" element={<Profile />} />
           <Route path="changepassword" element={<ChangePassword />} />
           <Route index element={<Dashboard />} />
-          <Route path="testcode" element={<Testcode />} />
           {/* cả 3 */}
           <Route element={<ProtectedRoute allowedRoles={["Admin" , "Owner" , "Staff"]} />}>
             <Route path="ticket">

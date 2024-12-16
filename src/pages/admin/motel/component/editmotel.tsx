@@ -16,8 +16,6 @@ import {
 } from "@/services/Dto/MotelDto";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Motel } from "..";
-
 export const EditMotelOwner = () => {
   const { id } = useParams();
 
@@ -29,16 +27,6 @@ export const EditMotelOwner = () => {
   const [services, setServices] = useState<GetMotelEditDTO_Service[]>([]);
   const [idServicesDelete, setIdServicesDelete] = useState<number[]>([]);
 
-  const addService = () => {
-    const newService = {
-      id: Date.now(), // Sử dụng timestamp làm id tạm thời
-      name: "",
-      price: 1000,
-      description: "",
-      isNew: true, // Đánh dấu service mới
-    };
-    setServices((prev) => [...prev, newService]);
-  };
   //phần địa chỉ
   type LocationOption = {
     name: string;
@@ -81,7 +69,7 @@ export const EditMotelOwner = () => {
         setSelectedWard("");
       }
     }
-  }, [selectedProvince]);
+  }, [selectedDistrict.name , selectedProvince.code, selectedProvince.name]);
 
   useEffect(() => {
     if (selectedDistrict.code) {
@@ -101,7 +89,7 @@ export const EditMotelOwner = () => {
         })
         .catch((error) => console.error("Lỗi khi lấy xã:", error));
     }
-  }, [selectedDistrict]);
+  }, [selectedDistrict, selectedWard]);
   //tách hàm địa chỉ ra
   const splitAddress = (address: string) => {
     const regex =
@@ -180,7 +168,7 @@ export const EditMotelOwner = () => {
 
   useEffect(() => {
     const LoadData = async () => {
-      var response = await GetMotelByEditApi(id);
+      const response = await GetMotelByEditApi(id);
       setValues(response.data);
       setServices(response.data.services || []);
       setOriginalServices(response.data.services || []); // Lưu trữ danh sách services ban đầu
@@ -200,7 +188,7 @@ export const EditMotelOwner = () => {
       setSelectedWard(addressParts.ward || ""); // Đảm bảo selectedWard có giá trị mặc định
     };
     LoadData();
-  }, []);
+  }, [id]);
 
   // Thêm hàm validate
   const validateField = (name: string, value: string) => {
@@ -396,13 +384,12 @@ export const EditMotelOwner = () => {
           localStorage.setItem("showNotification", "true");
         });
       }
-    } catch (error: any) {
+    } catch {
       Swal.fire({
         icon: "error",
         title: "Thất bại!",
         text: "Sửa dãy trọ thất bại",
       });
-      console.log("lỗi r" + error.message);
     }
   };
 

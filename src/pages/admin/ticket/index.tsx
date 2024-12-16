@@ -1,5 +1,3 @@
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import "./styles/styleticket.scss"
 import { getTickets } from "@/services/api/ticketApi";

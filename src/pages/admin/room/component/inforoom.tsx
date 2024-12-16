@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import {  useState } from "react";
 import "../style/room.scss";
 import Detailroom from "./detailroom/detailroom";
 import Historyroom from "./detailroom/historyroom";
@@ -7,8 +7,7 @@ import Editroom from "./detailroom/editroom";
 import AddUserRoom from "./detailroom/addUserRoom";
 import Baotriroom from "./detailroom/baotriroom";
 import { useParams } from "react-router-dom";
-import { GetRoomByIdApi } from "@/services/api/MotelApi";
-import { RoomDTO } from "@/services/Dto/MotelDto";
+
 
 const Inforoom = () => {
   const [modalState, setModalState] = useState<{ [key: string]: boolean }>({

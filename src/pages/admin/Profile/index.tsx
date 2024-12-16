@@ -7,7 +7,7 @@ import { fetchAccount } from '@/components/header/redux/action';
 import './adminprofile.scss'
 import { useNavigate } from 'react-router-dom';
 import { fetchPackage } from "@/components/header/redux/action";
-import { useEffect, useState, } from "react";
+import { useEffect} from "react";
 
 const AdminProfile = () => {
     const navigate = useNavigate();

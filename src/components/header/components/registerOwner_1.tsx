@@ -124,7 +124,7 @@ const RegisterOwner_1 = ({ onNext }: Props) => {
     },
   });
 
-  const { fields, append, remove } = useFieldArray({
+  const { fields, remove } = useFieldArray({
     control,
     name: "services",
   });

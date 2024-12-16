@@ -13,7 +13,7 @@ interface Motel {
   name: string;
   address: string;
   price: string;
-  images: [{ id: string; link: string; type: string }];
+  images: [{ id: string; link: string; type: string , index:number }];
 }
 
 function RelevantMotel({ address, currentMotelId }: RelevantMotelProps) {
@@ -117,14 +117,14 @@ function RelevantMotel({ address, currentMotelId }: RelevantMotelProps) {
                         <div className="carousel-indicators mb-0">
                           {motel.images &&
                             motel.images.length > 0 &&
-                            motel.images.map((image, imgIndex) => (
+                            motel.images.map((imgIndex) => (
                               <button
                                 key={`${imgIndex}`}
                                 type="button"
                                 data-bs-target={`#carouselExampleIndicators-2-${index}`}
                                 data-bs-slide-to={imgIndex}
-                                className={imgIndex === 0 ? "active" : ""}
-                                aria-label={`Slide ${imgIndex + 1}`}
+                                className={imgIndex.index === 0 ? "active" : ""}
+                                aria-label={`Slide ${imgIndex.index + 1}`}
                                 onClick={(e) => e.stopPropagation()}
                               ></button>
                             ))}

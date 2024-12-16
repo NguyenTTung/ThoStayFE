@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, isFulfilled, isPending, isRejected } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { getAccount, getMyMotel, getNoti, MyMotel, User, Notification, getPackage, MyPackage } from './reducer'
 
 interface AccountState {
@@ -62,11 +62,11 @@ export const action = createSlice({
                 state.isLoading = false;
                 state.isErr = false;
             })
-            .addCase(fetchAccount.pending, (state, action) => {
+            .addCase(fetchAccount.pending, (state) => {
                 state.isLoading = true;
                 state.isErr = false;
             })
-            .addCase(fetchAccount.rejected, (state, action) => {
+            .addCase(fetchAccount.rejected, (state) => {
                 state.isLoading = false;
                 state.isErr = true;
             });
@@ -77,11 +77,11 @@ export const action = createSlice({
                 state.isLoading = false;
                 state.isErr = false;
             })
-            .addCase(fetchMyMotel.pending, (state, action) => {
+            .addCase(fetchMyMotel.pending, (state) => {
                 state.isLoading = true;
                 state.isErr = false;
             })
-            .addCase(fetchMyMotel.rejected, (state, action) => {
+            .addCase(fetchMyMotel.rejected, (state) => {
                 state.isLoading = false;
                 state.isErr = true;
             });
@@ -92,11 +92,11 @@ export const action = createSlice({
                 state.isLoading = false;
                 state.isErr = false;
             })
-            .addCase(fetchMyNoti.pending, (state, action) => {
+            .addCase(fetchMyNoti.pending, (state) => {
                 state.isLoading = true;
                 state.isErr = false;
             })
-            .addCase(fetchMyNoti.rejected, (state, action) => {
+            .addCase(fetchMyNoti.rejected, (state) => {
                 state.isLoading = false;
                 state.isErr = true;
             });
@@ -107,11 +107,11 @@ export const action = createSlice({
                 state.isLoading = false;
                 state.isErr = false;
             })
-            .addCase(fetchPackage.pending, (state, action) => {
+            .addCase(fetchPackage.pending, (state) => {
                 state.isLoading = true;
                 state.isErr = false;
             })
-            .addCase(fetchPackage.rejected, (state, action) => {
+            .addCase(fetchPackage.rejected, (state) => {
                 state.isLoading = false;
                 state.isErr = true;
             });

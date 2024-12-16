@@ -1,11 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import LoginForm from './components/loginForm';
-
 import { AccountDto, getLoginApi } from '@/services/api/authApi';
-
 import './styles/login.scss';
-
-import QR from '@/assets/icon/QR.png';
 import bg from '@/assets/images/backgrounds/img-login.png';
 import search from '@/assets/icon/search.png';
 import digitize from '@/assets/icon/digitize.png';
@@ -31,7 +27,7 @@ const Login = () => {
 			//xoá token
 			localStorage.removeItem('token');
 		}
-	}, []);
+	}, [token]);
 
 
 	// ... existing code ...

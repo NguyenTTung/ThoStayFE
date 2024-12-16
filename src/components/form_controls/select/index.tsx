@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { Controller, Control, UseFormSetValue } from "react-hook-form"
+import { Controller, Control } from "react-hook-form"
 
 export interface Option {
     value: any;

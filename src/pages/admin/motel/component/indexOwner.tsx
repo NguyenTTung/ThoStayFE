@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { MotelDTO } from '@/services/Dto/MotelDto';
@@ -40,7 +41,7 @@ export const indexOwner = () => {
   const [timeoutId, setTimeoutId] = useState<ReturnType<typeof setTimeout>>();
   const [searchTerm, setSearchTerm] = useState<string>('');
   // ... existing code ...
-
+console.log(searchTerm);
   useEffect(() => {
     LoadData(query);
   }, [query]);

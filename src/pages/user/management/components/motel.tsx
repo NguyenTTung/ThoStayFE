@@ -4,16 +4,41 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Pagination, Navigation } from 'swiper/modules';
 import { useEffect, useState } from "react";
-import { postVnpayApi, VnPay } from "@/services/api/HomeApi";
 import '../styles/motel.scss'
 import { GetRentalRoomDetailAPI } from '@/services/api/HomeApi';
 import Feedback from './feedback';
 import Swal from 'sweetalert2';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 const Motel = () => {
+    interface RoomImage {
+        id: string;
+        link: string;
+      }
+      interface Service {
+        name: string;
+        price: number;
+      }
+      interface RentalDetail {
+        motelName: string;
+        motelAdress: string;
+        roomNumber: string;
+        price: number;
+        area: number;
+        electricPrice: number;
+        waterPrice: number;
+        otherService: Service[];
+        fullName: string;
+        createDate: string;
+        status: number;
+        owner: string;
+        phone: string;
+        roomImages: RoomImage[];
+        billId: string;
+        totalMoney: number;
+        id: string;
+      }
     const location = useLocation(); // Lấy thông tin URL hiện tại
-    const navigate = useNavigate();
-    const [rentalDetail, setRentalDetail] = useState<any | null>(null);
+    const [rentalDetail, setRentalDetail] = useState<RentalDetail | null>(null);
     useEffect(() => {
         const token = localStorage.getItem("token");
         const fetchRetalRoomDetail = async () => {
@@ -28,35 +53,6 @@ const Motel = () => {
         };
         fetchRetalRoomDetail();
     }, []);
-
-    const handleVnPayPayment = async (billId: number, amount: number) => {
-        console.log('Inside handleVnPayPayment');
-        try {
-            const vnpayPayload: VnPay = {
-                orderId: billId.toString(),
-                amount,
-                returnUrl: `https://localhost:7299/api/Main/vnpay-return`,
-            };
-            const response = await postVnpayApi(vnpayPayload);
-            if (response.status === 200) {
-                window.location.href = response.data;
-
-            } else {
-                Swal.fire({
-                    title: 'Chưa thanh toán',
-                    text: 'Thanh toán thất bại',
-                    icon: 'error',
-                    timer: 2000,
-                    timerProgressBar: true,
-                    showConfirmButton: false,
-                });
-                navigate('/user/motel');
-            }
-        } catch (error: any) {
-            console.error('Error creating order:', error.message);
-            alert('An error occurred while creating the order');
-        }
-    };
 
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
@@ -107,7 +103,7 @@ const Motel = () => {
                             modules={[Pagination, Navigation]}
                             className="mySwiper rounded my-custom-swiper"
                         >
-                            {rentalDetail.roomImages.map((image: any) => (
+                            {rentalDetail.roomImages.map((image: RoomImage) => (
                                 <SwiperSlide key={image.id}>
                                     <img src={image.link} alt="Room" className="slide-img" />
                                 </SwiperSlide>
@@ -127,7 +123,7 @@ const Motel = () => {
                                 <div className="service-title text-dark">Dịch vụ tiện ích</div>
                                 <div className="service text-dark">Điện: {rentalDetail.electricPrice.toLocaleString()} vnđ</div>
                                 <div className="service text-dark">Nước: {rentalDetail.waterPrice.toLocaleString()} vnđ</div>
-                                {rentalDetail.otherService.map((service: any, index: number) => (
+                                {rentalDetail.otherService.map((service: Service, index: number) => (
                                     <div key={index} className="service text-dark">
                                         {service.name}: {service.price.toLocaleString()} vnđ
                                     </div>
@@ -161,7 +157,7 @@ const Motel = () => {
                                     Thanh toán
                                 </button>
                             </div> */}
-                            <Feedback motelId={rentalDetail.id} />
+                            <Feedback motelId={isNaN(Number(rentalDetail.id)) ? 0 : Number(rentalDetail.id)} />
                         </div>
                     </div>
                 </div>

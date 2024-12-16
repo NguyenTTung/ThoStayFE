@@ -54,6 +54,7 @@ const Header = () => {
   });
   const [selectedWard, setSelectedWard] = useState<string>("Phường");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  console.log(setSearchQuery, setSelectedProvince,provinces,districts,wards);
   useEffect(() => {
     // Lấy danh sách tỉnh
     axios

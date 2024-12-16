@@ -1,10 +1,6 @@
 import CreateNotification from "./component/CreateNotification";
 import EditNotification from "./component/EditNotification";
 import SendNotification from "./component/SendNotification";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { Noti } from "@/services/api/authApi";
 import { Data } from "@/services/Dto/NotificationDto";
